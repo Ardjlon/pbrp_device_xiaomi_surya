@@ -119,6 +119,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Extras props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Crypto
 PLATFORM_VERSION := 127
