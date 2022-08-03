@@ -22,6 +22,7 @@ Works:
 - [X] Sideload (adb sideload update.zip)
 - [X] Reboot to bootloader/recovery/system/fasbootd
 - [X] F2FS/EXT4 Support, exFAT/NTFS where supported
+- [X] FBE V2 by subhajeetmuhuri (kenny)
 
 ## Compile
 
