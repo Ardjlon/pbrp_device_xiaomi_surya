@@ -3,6 +3,8 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
 # mount point    fstype   device            device2      flags
+/metadata         ext4   /dev/block/sda10                flags=display="Metadata";backup=1;wrappedkey
+/data             f2fs   /dev/block/sda16                flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption
 /boot             emmc   /dev/block/sde46
 /dtbo             emmc   /dev/block/sde47                flags=backup=1;display="DTBO";flashimg
 /recovery         emmc   /dev/block/sda8                 flags=backup=1;display="Recovery";flashimg
@@ -35,7 +37,7 @@
 /efsc             emmc   /dev/block/sdf5                 flags=backup=1;subpartitionof=/efs1
 /vbmeta           emmc   /dev/block/sde45                flags=backup=1;display="VBMeta";flashimg
 /vbmeta_system    emmc   /dev/block/sda9                 flags=backup=1;display="VBMeta System";flashimg
+
 # Removable storage
 /external_sd      vfat   /dev/block/mmcblk0p1 /dev/block/mmcblk0 flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable
 /usb-otg          vfat   /dev/block/sdg1 /dev/block/sdg          flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable
-

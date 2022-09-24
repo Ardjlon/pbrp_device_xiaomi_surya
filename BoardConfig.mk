@@ -39,21 +39,21 @@ ENABLE_SCHEDBOOST := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
-	console=ttyMSM0,115200n8 \
-	androidboot.hardware=qcom \
-	androidboot.console=ttyMSM0 \
-	androidboot.memcg=1 \
-	lpm_levels.sleep_disabled=1 \
-	video=vfb:640x400,bpp=32,memsize=3072000 \
-	msm_rtb.filter=0x237 \
-	service_locator.enable=1 \
-	androidboot.usbcontroller=a600000.dwc3 \
-	swiotlb=2048 \
-	androidboot.boot_devices=soc/1d84000.ufshc \
-	cgroup.memory=nokmem,nosocket \
-	androidboot.init_fatal_reboot_target=recovery \
-	androidboot.fastboot=1 \
-	androidboot.selinux=permissive
+    console=ttyMSM0,115200n8 \
+    androidboot.hardware=qcom \
+    androidboot.console=ttyMSM0 \
+    androidboot.memcg=1 \
+    lpm_levels.sleep_disabled=1 \
+    video=vfb:640x400,bpp=32,memsize=3072000 \
+    msm_rtb.filter=0x237 \
+    service_locator.enable=1 \
+    androidboot.usbcontroller=a600000.dwc3 \
+    swiotlb=2048 \
+    androidboot.boot_devices=soc/1d84000.ufshc \
+    cgroup.memory=nokmem,nosocket \
+    androidboot.init_fatal_reboot_target=recovery \
+    androidboot.fastboot=1 \
+    androidboot.selinux=permissive
 
 BOARD_KERNEL_IMAGE_NAME    := Image
 BOARD_KERNEL_PAGESIZE      := 4096
@@ -72,14 +72,14 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_MKBOOTIMG_ARGS += \
-	--base $(BOARD_KERNEL_BASE) \
-	--pagesize $(BOARD_KERNEL_PAGESIZE) \
-	--ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-	--tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
-	--kernel_offset $(BOARD_KERNEL_OFFSET) \
-	--second_offset $(BOARD_KERNEL_SECOND_OFFSET) \
-	--dtb_offset $(BOARD_DTB_OFFSET) \
-	--header_version $(BOARD_BOOT_HEADER_VERSION)
+    --base $(BOARD_KERNEL_BASE) \
+    --pagesize $(BOARD_KERNEL_PAGESIZE) \
+    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
+    --kernel_offset $(BOARD_KERNEL_OFFSET) \
+    --second_offset $(BOARD_KERNEL_SECOND_OFFSET) \
+    --dtb_offset $(BOARD_DTB_OFFSET) \
+    --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Avb
 BOARD_AVB_ENABLE := true
@@ -100,10 +100,10 @@ BOARD_SUPER_PARTITION_SIZE := 8589934592
 BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_SIZE := 8585740288 # (BOARD_SUPER_PARTITION_SIZE - 4194304) 4MiB
 BOARD_MAIN_PARTITION_LIST := \
-	system \
-	system_ext \
-	vendor \
-	product
+    system \
+    system_ext \
+    vendor \
+    product
 
 # File systems
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -122,7 +122,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Crypto
-PLATFORM_VERSION := 127
+PLATFORM_VERSION := 99.87.36
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
@@ -171,4 +171,3 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_LPDUMP := true
 TW_EXCLUDE_LPTOOLS := true
 TW_INCLUDE_PYTHON := true
-
