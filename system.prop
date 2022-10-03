@@ -7,5 +7,3 @@ sys.usb.rmnet.func.name=rmnet_bam
 persist.sys.isUsbOtgEnabled=true
 vendor.gatekeeper.disable_spu=true
 ro.boot.dynamic_partitions=true
-ro.adb.secure=0
-fbe.metadata.wrappedkey=true
