@@ -3,6 +3,10 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     install_keyring
 
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    chmod 0777 /system/bin/patchrecoveryfstab.sh
+    start patchrecoveryfstab
+
 on init
     setprop crypto.ready 1
 
@@ -61,3 +65,10 @@ on property:vendor.sys.listeners.registered=true
     start keymaster-4-0
     start gatekeeper-1-0
     start servicemanager
+
+service patchrecoveryfstab /system/bin/patchrecoveryfstab.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
