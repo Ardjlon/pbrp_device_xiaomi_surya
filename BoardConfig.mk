@@ -42,20 +42,14 @@ ENABLE_SCHEDBOOST := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
-	console=ttyMSM0,115200n8 \
 	androidboot.hardware=qcom \
-	androidboot.console=ttyMSM0 \
 	androidboot.memcg=1 \
 	lpm_levels.sleep_disabled=1 \
-	video=vfb:640x400,bpp=32,memsize=3072000 \
 	msm_rtb.filter=0x237 \
 	service_locator.enable=1 \
 	androidboot.usbcontroller=a600000.dwc3 \
 	swiotlb=2048 \
 	androidboot.boot_devices=soc/1d84000.ufshc \
-	cgroup.memory=nokmem,nosocket \
-	androidboot.init_fatal_reboot_target=recovery \
-	androidboot.fastboot=1 \
 	androidboot.selinux=permissive
 
 BOARD_KERNEL_IMAGE_NAME    := Image
@@ -133,7 +127,7 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 PLATFORM_SECURITY_PATCH := 2127-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
-TW_USE_FSCRYPT_POLICY := 1
+#TW_USE_FSCRYPT_POLICY := 1
 
 BOARD_USES_METADATA_PARTITION := true
 BOARD_ROOT_EXTRA_FOLDERS += metadata
