@@ -14,9 +14,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-	android.hardware.fastboot@1.0-impl-mock \
-	android.hardware.fastboot@1.0-impl-mock.recovery \
-	fastbootd
+    android.hardware.fastboot@1.1-impl-mock
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 29
