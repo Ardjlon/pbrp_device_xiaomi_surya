@@ -156,6 +156,7 @@ TW_EXCLUDE_APEX := true
 TW_PREPARE_DATA_MEDIA_EARLY := true
 TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_FRAMERATE := 90
+TW_SUPPORT_INPUT_1_2_HAPTICS := true
 
 # The path to a temperature sensor
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone19/temp"
