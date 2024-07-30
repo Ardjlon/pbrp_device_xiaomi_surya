@@ -50,11 +50,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.device=$(PRODUCT_RELEASE_NAME)
 
-# Qcom encryption
-PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
-
 # Use FUSE passthrough
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.fuse.passthrough.enable=true
