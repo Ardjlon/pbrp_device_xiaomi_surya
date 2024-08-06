@@ -113,14 +113,12 @@ BOARD_MAIN_PARTITION_LIST := \
 # File systems
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # Workaround for error copying vendor files to recovery ramdisk
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_COPY_OUT_PRODUCT := product
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-TARGET_COPY_OUT_VENDOR := vendor
+BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_MAIN_PARTITION_LIST))
+$(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
+$(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 # Extras props
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
