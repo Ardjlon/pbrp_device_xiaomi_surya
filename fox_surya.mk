@@ -45,3 +45,6 @@ OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR := 1
 # Features
 OF_ENABLE_ALL_PARTITION_TOOLS := 1
 OF_DYNAMIC_FULL_SIZE := 8589934592
+# ----- data format stuff -----
+# ensure that /sdcard is bind-unmounted before f2fs data repair or format
+OF_UNBIND_SDCARD_F2FS := 1
