@@ -34,3 +34,6 @@ $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Inherit any OrangeFox-specific settings
+$(call inherit-product-if-exists, $(DEVICE_PATH)/fox_$(PRODUCT_RELEASE_NAME).mk)
