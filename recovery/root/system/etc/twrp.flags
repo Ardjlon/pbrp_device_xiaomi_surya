@@ -28,7 +28,6 @@
 /persist_image    emmc   /dev/block/sda2                 flags=backup=0;display="Persist";flashimg
 /cust             ext4   /dev/block/sda7                 flags=backup=1;display="Cust"
 /cust_image       emmc   /dev/block/sda7                 flags=backup=0;display="Cust";flashimg
-/storage          f2fs   /data/media/0                   flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
 /efs1             emmc   /dev/block/sdf2                 flags=backup=1;display="EFS"
 /efs2             emmc   /dev/block/sdf3                 flags=backup=1;subpartitionof=/efs1
 /efsg             emmc   /dev/block/sdf4                 flags=backup=1;subpartitionof=/efs1
