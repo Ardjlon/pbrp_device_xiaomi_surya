@@ -40,6 +40,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export TARGET_DEVICE_ALT="karna"
 
  	#OFR build settings & info
+	export FOX_INSTALLER_DEBUG_MODE=1
 	export FOX_DELETE_INITD_ADDON=1
 	export FOX_SETTINGS_ROOT_DIRECTORY="/persist"
 	export FOX_ALLOW_EARLY_SETTINGS_LOAD=1
