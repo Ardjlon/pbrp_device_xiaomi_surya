@@ -5,6 +5,7 @@
 # Credits:  OranfeFox team for wrappedkey script as reference
 #
 
+set -x
 LOGF=/tmp/test.log
 
 patchrecoveryfstab() {
@@ -24,10 +25,6 @@ patchrecoveryfstab() {
     echo "Copying build.prop and fstab.qcom to temporary directory." >>$LOGF
     cp $vendor_temp/build.prop $prop
     cp $vendor_temp/etc/fstab.qcom $fstab
-
-    echo "Unmounting vendor partition and removing temporary directory." >>$LOGF
-    umount $vendor_temp
-    rm -rf $vendor_temp
 
     [ ! -e $prop ] && {
         echo "$prop does not exist. Quitting." >>$LOGF
@@ -50,6 +47,10 @@ patchrecoveryfstab() {
     fi
 
     echo "End of patchrecoveryfstab function." >>$LOGF
+
+    echo "Unmounting vendor partition and removing temporary directory." >>$LOGF
+    umount $vendor_temp
+    rm -rf $vendor_temp
 }
 
 patchrecoveryfstab
