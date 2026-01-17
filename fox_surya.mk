@@ -48,3 +48,6 @@ OF_DYNAMIC_FULL_SIZE := 8589934592
 # ----- data format stuff -----
 # ensure that /sdcard is bind-unmounted before f2fs data repair or format
 OF_UNBIND_SDCARD_F2FS := 1
+
+# Unmount SD cards before rebooting
+OF_UNMOUNT_SDCARDS_BEFORE_REBOOT := 1
